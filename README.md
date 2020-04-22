@@ -1,2 +1,2 @@
 # CodeCube
-codecube.in.th
+https://www.codecube.in.th/
