@@ -1,5 +1,5 @@
 /*
-    TASK:
+    TASK: 
     LANG: CPP
     AUTHOR: Aphrodicez
     SCHOOL: RYW
