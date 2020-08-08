@@ -7,9 +7,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-struct A{
+struct A {
     int u, w;
-    bool operator < (const A& o) const{
+    bool operator < (const A& o) const {
         return w > o.w;
     }
     /**
@@ -25,7 +25,7 @@ vector <A> g[mxN]; /// graph
 
 priority_queue <A> he;
 
-int main ()
+int main()
 {
     int n, m, st, en, u, v, w, i;
     /**
@@ -36,34 +36,34 @@ int main ()
     cin >> n >> m;
     cin >> st >> en;
 
-    for(i=1; i<=m; i++){
+    for (i = 1; i <= m; i++) {
         cin >> u >> v >> w;
         /// undirected graph
-        g[u].push_back({v, w});
-        g[v].push_back({u, w});
+        g[u].push_back({ v,w });
+        g[v].push_back({ u,w });
         /// connect the edges
     }
 
-    for(i=1; i<=n; i++){
+    for (i = 1; i <= n; i++) {
         dis[i] = 2e9;
-    /// set distances to INFINITY
+        /// set distances to INFINITY
     }
 
-    he.push({st, 0});
+    he.push({ st, 0 });
     dis[st] = 0;
     /// set starting node
 
-    while(!he.empty()){
+    while (!he.empty()) {
         u = he.top().u;
         w = he.top().w;
         he.pop();
-        for(auto x : g[u]){
+        for (auto x : g[u]) {
             int nw;
             /// new weight
             nw = dis[u] + x.w;
-            if(dis[x.u] >= nw){
+            if (dis[x.u] >= nw) {
                 dis[x.u] = nw;
-                he.push({x.u, nw});
+                he.push({ x.u, nw });
             }
         }
     }
