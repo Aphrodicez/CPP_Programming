@@ -6,8 +6,10 @@
 */
 #include <bits/stdc++.h>
 using namespace std;
+
 int a[3];
 char s[60];
+
 int main()
 {
     int i, len;
